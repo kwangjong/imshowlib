@@ -20,7 +20,7 @@ or
 %matplotlib notebook
 ```
 ### Documentation
-* [imshow2d](#imshowlib.imshow2d)
+* [imshow2d](#imshowlib)
 * [imshow3d](#imshowlib.imshow3d)
 * [gridshow3d](#imshowlib.gridshow3d)
 * [imshow2dAll](#imshowlib.imshow2dAll)
