@@ -1,4 +1,4 @@
-#library for showing 3d numpy images on jupyter notebook
+#library for showing numpy images on jupyter notebook
 #
 #   to use imshow3d, after import do:
 #       %matplotlib inline
