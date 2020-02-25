@@ -27,7 +27,7 @@ or
 * [gridshow3dAll](#imshowlib.imshow3dAll)
 
 
-#### imshowlib.imshow2d
+#### imshowlib
 ```
 imshow2d(img, grid=False, mask=None, alpha=0.4, 
          xticks=[], yticks=[], label=None, fontsize=None, 
