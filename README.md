@@ -24,7 +24,7 @@ or
 * [imshow3d](#imshow3d)
 * [gridshow3d](#gridshow3d)
 * [imshow2dAll](#imshow2dAll)
-* [gridshow3dAll](#imshow3dAll)
+* [gridshow3dAll](#gridshow3dAll)
 
 
 #### imshow2d
