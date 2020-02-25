@@ -21,10 +21,10 @@ or
 ```
 ### Documentation
 * [imshow2d](####imshowlib.imshow2d)
-* [imshow3d] ()
-* [gridshow3d] ()
-* [imshow2dAll] ()
-* [gridshow3dAll] ()
+* [imshow3d](####imshowlib.imshow3d)
+* [gridshow3d](####imshowlib.gridshow3d)
+* [imshow2dAll](####imshowlib.imshow2dAll)
+* [gridshow3dAll](####imshowlib.imshow3dAll)
 
 
 #### imshowlib.imshow2d
