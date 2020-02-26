@@ -1,6 +1,6 @@
 # imshowlib
 
-Library for showing numpy images on jupyter notebook.
+library for viewing numpy medical images on jupyter notebook.
 
 ### Prerequisites
 
@@ -11,14 +11,12 @@ Library for showing numpy images on jupyter notebook.
 ```
 import imshowlib as imshow
 ```
-To use imshow3d, after import do:
+to use imshow3d, after import do:
 ```
 %matplotlib inline
 ```
-or
-```
-%matplotlib notebook
-```
+
+
 ## Documentation
 * [imshow2d](#imshow2d)
 * [imshow3d](#imshow3d)
@@ -27,37 +25,84 @@ or
 * [gridshow3dAll](#gridshow3dAll)
 
 
-### imshow2d
+## imshow2d
+display 2d image array
 ```
-imshow2d(img, grid=False, mask=None, alpha=0.4, 
-          xticks=[], yticks=[], label=None, fontsize=None, 
-          cmap=None, figsize=None, figsave=None)
+imshowlib.imshow2d(img, grid=False, mask=None, alpha=0.4, xticks=[], yticks=[], label=None, 
+fontsize=None, cmap=None, figsize=None, figsave=None)
+```
+#### parameters:
+| Name          | Type                              | Description                                                      |
+| ------------- | --------------------------------- | ---------------------------------------------------------------- |
+| img           | array-like or PIL image           | image data; supported shapes are (M, N), (M, N, 3), or (M, N, 4) |
+| grid          | bool, optional                    | whether to show grid line                                        |
+| mask          | array-like or PIL image, optional | mask to overlay on top of image. data should be two-dim binary   |
+| alpha         | scalar, optional                  | The alpha value of the mask                                      |
+| xticks        | array_like, optional              | list of positions at which ticks should be placed                |
+| yticks        | array_like, optional              | list of positions at which ticks should be placed                |
+| label         | str, optional                     | label text                                                       |
+| fontsize      | scalar, optional                  | font size of label                                               |
+| cmap          | str or Colormap, optional         | Colormap used to map scalar data to colors                       |
+| figsize       | (float, float), optional          | width, height in inches                                          |
+| figsave       | str, optional                     | save path and format                                             |
+
+
+## imshow2dAll
+display multiple 2d image arrays with pyplot.subplot
+```
+imshowlib.imshow2dAll(imgs, dim, grid=False, mask=None, alpha=0.4, xticks=[], yticks=[], label=None, 
+fontsize=None, cmap=None, figsize=None, figsave=None)
+```
+#### parameters:
+| Name          | Type                                 | Description                                                      |
+| ------------- | ------------------------------------ | ---------------------------------------------------------------- |
+| img           | (array-like or PIL image,)           | list of image data; supported shapes are (M, N), (M, N, 3), or (M, N, 4) |
+| dim           | (integer, integer)                   | number of rows and column of subplots. plots will be displayed from top-left corner |
+| grid          | (bool,), optional                    | whether to show grid line                                        |
+| mask          | (array-like or PIL image,), optional | mask to overlay on top of image. data should be two-dim binary   |
+| alpha         | (scalar,), optional                  | The alpha value of the mask                                      |
+| xticks        | (array_like,), optional              | list of positions at which ticks should be placed                |
+| yticks        | (array_like,), optional              | list of positions at which ticks should be placed                |
+| label         | (str,), optional                     | label text                                                       |
+| fontsize      | (scalar,), optional                  | font size of label                                               |
+| cmap          | (str or Colormap,), optional         | Colormap used to map scalar data to colors                       |
+| figsize       | (float, float), optional             | width, height in inches                                          |
+| figsave       | str, optional                        | save path and format                                             |
+
+
+## imshow3d
+display 3d image arrays as slices along axis=2; use interactive slider to scroll through slices
+```
+imshowlib.imshow3d(img, grid=False, mask=None, alpha=0.4, xticks=[], yticks=[], label=None, 
+fontsize=None, cmap=None, figsize=None, continuous_update=True)
+```
+#### parameters:
+| Name              | Type                              | Description                                                      |
+| ----------------- | --------------------------------- | ---------------------------------------------------------------- |
+| img               | ndarray                           | image data; supported shapes are (M, N, K)                       |
+| grid              | bool, optional                    | whether to show grid line                                        |
+| mask              | ndarray, optional                 | mask to overlay on top of image. data should be three-dim binary |
+| alpha             | scalar, optional                  | The alpha value of the mask                                      |
+| xticks            | array_like, optional              | list of positions at which ticks should be placed                |
+| yticks            | array_like, optional              | list of positions at which ticks should be placed                |
+| label             | str, optional                     | label text                                                       |
+| fontsize          | scalar, optional                  | font size of label                                               |
+| cmap              | str or Colormap, optional         | Colormap used to map scalar data to colors                       |
+| figsize           | (float, float), optional          | width, height in inches                                          |
+| figsave           | str, optional                     | save path and format                                             |
+| continuous_update | bool, optional                    | if true, continuously update image when scrolling                |
+
+
+
+## gridshow3d
+```
+imshowlib.gridshow3d(img, label=None, fontsize=None, cmap=None, figsize=None, figsave=None)
 ```
 
 
-### imshow2dAll
-imshowlib.imshow2dAll
+## gridshow3dAll
 ```
-imshow2dAll(imgs, dim, grid=False, mask=None, alpha=0.4,
-             xticks=[], yticks=[], label=None, fontsize=None, 
-             cmap=None, figsize=None, figsave=None)
+imshowlib.gridshow3dAll(imgs, dim, label=None, fontsize=None, cmap=None, figsize=None, figsave=None, 
+label_offset=-0.01)
 ```
 
-### imshow3d
-```
-imshow3d(img, grid=False, mask=None, alpha=0.4, 
-          xticks=[], yticks=[], label=None, fontsize=None, 
-          cmap=None, figsize=None, continuous_update=True)
-```
-
-### gridshow3d
-```
-gridshow3d(img, label=None, fontsize=None, 
-            cmap=None, figsize=None, figsave=None)
-```
-
-### gridshow3dAll
-```
-gridshow3dAll(imgs, dim, label=None, fontsize=None, 
-               cmap=None, figsize=None, figsave=None, label_offset=-0.01)
-```
