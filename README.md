@@ -1,4 +1,4 @@
-# Imshowlib
+# imshowlib
 
 A library for viewing medical images on jupyter notebook. Voxel image array should be coverted to a numpy array. 3D image MxNxK (MxN images with K slices) can be displayed by slice using imshowlib.imshow3d(). 
 
